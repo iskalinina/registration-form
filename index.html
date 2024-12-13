@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Конкурентное преимущество или торговое предложение компании">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preload" href="source/fonts/inter-400.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="source/fonts/inter-500.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="source/fonts/inter-600.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="source/fonts/inter-700.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="source/fonts/plus-500.woff2" as="font" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <main class="registration">
+            <div class="registration__header header">
+                <a class="header__prev-btn btn btn--icon" href="#"></a>
+                <h1>Регистрация</h1>
+                <div class="header__inner">
+                    <p>Уже есть аккаунт?</p>
+                    <button class="header__login-btn btn btn--light" type="button">Войти</button>
+                </div>
+            </div>
+
+            <form id="registration-form" class="registration__form form">
+                <div class="form__group">
+                    <label for="first-name">Имя</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                    <p class="form__error-message" id="first-name-error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label for="last-name">Фамилия</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                    <p class="form__error-message" id="last-name-error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                    <p class="form__error-message" id="email-error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label for="password">Пароль</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="button" id="toggle-password" class="btn btn--eye">
+                        <img src="source/icons/eye-off.svg" alt="Показать" id="eye-icon">
+                    </button>
+                    <p class="form__error-message" id="password-error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label for="password-confirm">Подтверждение пароля</label>
+                    <input type="password" id="password-confirm" name="password-confirm" required>
+                    <button type="button" id="toggle-password-confirm" class="btn btn--eye">
+                        <img src="source/icons/eye-off.svg" alt="Показать" id="eye-icon-confirm">
+                    </button>
+                    <p class="form__error-message" id="password-confirm-error"></p>
+                </div>
+
+                <div class="form__group">
+                    <label for="birth-day">Дата рождения</label>
+                    <input type="date" id="birth-day" name="birth-day" required>
+                    <p class="form__error-message" id="birth-day-error"></p>
+                </div>
+
+                <button class="form__submit btn btn--primary" type="submit" id="form-button" disabled>Отправить</button>
+            </form>
+        </main>
+    </div>
+
+<script src="main.js"></script>
+</body>
+</html>

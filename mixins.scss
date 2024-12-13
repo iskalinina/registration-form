@@ -1,0 +1,53 @@
+@import "variables";
+
+@mixin text($size, $line-height, $weight: $ff-medium) {
+  font-size: $size;
+  line-height: $line-height;
+  font-weight: $weight;
+}
+
+@mixin hover {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+}
+
+@mixin focus {
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+@mixin active {
+  &.focus-visible:active {
+    @content;
+  }
+}
+
+@mixin hover-focus {
+  @media (hover: hover) {
+    &:hover:not(.focus-visible) {
+      @content;
+    }
+  }
+
+  &.focus-visible:focus {
+    @content;
+  }
+}
+
+// Mobile First
+
+@mixin vp-1024 {
+  @media (min-width: $vp-1024 - 1) {
+    @content;
+  }
+}
+
+@mixin vp-768 {
+  @media (min-width: ($vp-768 - 1px)) {
+    @content;
+  }
+}

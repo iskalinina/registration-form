@@ -1,0 +1,110 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "global";
+
+.registration {
+  max-width: 343px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.registration__header {
+  margin-bottom: 24px;
+}
+
+.header__prev-btn {
+  display: block;
+  background-image: url("source/icons/arrow-left.svg");
+  margin-bottom: 24px;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+}
+
+.header h1 {
+  @include text(32px, 130%, $ff-bold);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.header p {
+  @include text(12px, 140%);
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: #6C7278;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &:not(:last-of-type) {
+    margin-bottom: 16px;
+  }
+
+  &:last-of-type {
+    margin-bottom: 24px;
+  }
+}
+
+.form__error-message {
+  @include text(9px, 100%, $ff-normal);
+  color: #ff0000;
+  position: absolute;
+  top: 70px;
+  left: 12px;
+  display: none;
+  margin: 0;
+}
+
+.form__error-message.is-shown {
+  display: block;
+}
+
+.form__group label {
+  @include text(12px, 160%);
+  font-family: $ff-plus;
+  letter-spacing: -0.02em;
+  color: #6C7278;
+  margin-bottom: 3px;
+}
+
+.form__group input {
+  @include text(14px, 140%);
+  letter-spacing: -0.01em;
+  color: #1A1C1E;
+  min-height: 46px;
+  border: 1px solid #EDF1F3;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgba(#E4E5E7, 0.24);
+  padding-left: 14px;
+  padding-right: 14px;
+  transition: all $trans-default;
+
+  &:hover,
+  &:focus,
+  &:focus-visible {
+    border-color: #B0B2B2;
+    outline: none;
+  }
+
+  &:active {
+    border-color: #888a8a;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background: url('source/icons/calendar.svg') no-repeat center center;
+  background-size: contain;
+  width: 11px;
+  height: 12px;
+  cursor: pointer;
+}
+
