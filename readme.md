@@ -5,6 +5,8 @@ https://www.figma.com/design/RL10YKCRt3qbuXyYBJkS4B/20-Screen-Login-%26-Register
 
 
 Для запуска проекта на локальном компьютере выполните следующие шаги.
+Склонируйте проект: git clone https://github.com/iskalinina/registration-form.git
+cd test-form
 
 Запуск проекта
    Откройте файл index.html в браузере.
