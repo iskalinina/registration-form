@@ -111,28 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Видимость пароля
-    document.getElementById('toggle-password').addEventListener('click', function() {
-        const eyeIcon = document.getElementById('eye-icon');
+    document.querySelectorAll('.js-toggle-password').forEach(button => {
+        button.addEventListener('click', () => {
+            const input = button.previousElementSibling;
+            const eyeIcon = button.querySelector('img');
 
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            eyeIcon.src = 'source/icons/eye-on.svg';
-        } else {
-            passwordInput.type = 'password';
-            eyeIcon.src = 'source/icons/eye-off.svg';
-        }
-    });
-
-    document.getElementById('toggle-password-confirm').addEventListener('click', function() {
-        const eyeIconConfirm = document.getElementById('eye-icon-confirm');
-
-        if (passwordConfirmInput.type === 'password') {
-            passwordConfirmInput.type = 'text';
-            eyeIconConfirm.src = 'source/icons/eye-on.svg';
-        } else {
-            passwordConfirmInput.type = 'password';
-            eyeIconConfirm.src = 'source/icons/eye-off.svg';
-        }
+            if (input.type === 'password') {
+                input.type = 'text';
+                eyeIcon.src = 'source/icons/eye-on.svg';
+            } else {
+                input.type = 'password';
+                eyeIcon.src = 'source/icons/eye-off.svg';
+            }
+        });
     });
 
 });
