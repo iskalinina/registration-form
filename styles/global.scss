@@ -64,6 +64,10 @@ a {
     opacity: 0.3;
   }
 
+  &:disabled {
+    opacity: 0.2;
+  }
+
   &--icon {
     width: 24px;
     height: 24px;
