@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const validateName = (input, errorId) => {
         const value = input.value.trim();
-        const regex = /^[A-Za-zА-Яа-яЁё\-\s]{1,50}$/;
+        const regex = /^[A-Za-zА-Яа-яЁё\s\-]{1,50}$/;
         const errorMessage = value.length === 0
             ? 'Обязательное поле'
             : (!regex.test(value))
@@ -92,7 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateSubmitButtonState = () => {
-        const isValid = [...form.elements].every(el => el.classList.contains('valid') || el.type === 'submit');
+        const isValid = [...form.elements].every(el =>
+            (el.type !== 'button' && el.type !== 'submit') ? el.classList.contains('valid') : true
+        );
         submitButton.disabled = !isValid;
     };
 
@@ -105,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        alert('Вы зарегисрированы! Welcome!');
+        alert('Вы зарегистрированы! Welcome!');
     });
 
     // Видимость пароля
